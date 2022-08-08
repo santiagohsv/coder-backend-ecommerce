@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "fe9b9a95-b2ac-4d2c-9dfb-683ca02bc93a",
+		"name": "Proyecto:  Backend ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20246319"
+	},
+	"item": [
+		{
+			"name": "Listado de productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detalle de un producto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"62efb8fb7f5d38976514268f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de productos por categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/productos/category/computers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"category",
+						"computers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar productos a la base de datos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n      \"name\": \"Sony FE 70-200mm f/2.8 Lens\",\r\n      \"category\": \"Photography\",\r\n      \"price\": 2000,\r\n      \"thumbnail\": \"https://static.bhphoto.com/images/images500x500/1634123153_1666363.jpg\",\r\n      \"stock\":8\r\n    }\r\n \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/productos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				},
+				"description": "El producto se pasa por el body. Con el siguiente formato:\r\n\r\n\r\n"
+			},
+			"response": []
+		}
+	]
+}
