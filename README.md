@@ -3,7 +3,7 @@
  Curso programación Backend Coderhouse 2022
 </p>
 
-### 🏠 [Homepage]( 'to be defined' )
+### 🏠 [Homepage]
 
 ## Install dependencies
 
