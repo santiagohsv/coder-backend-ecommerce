@@ -1,5 +1,5 @@
-import ProductDAO from '../models/productDAO'
-import { IProduct } from '../models/productDAO'
+import ProductDAO from '../models/products'
+import { IProduct } from '../models/products'
 
 export const  apiGetProducts =  () => {
     return ProductDAO.getProducts()

@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+
 import MongoDB from '../services/mongodb';
 
 export interface IProduct {
@@ -19,7 +20,6 @@ const ProductSchema = new Schema<IProduct>(
   },
   { timestamps: true, versionKey: false }
 );
-  MongoDB 
 
 
 const ProductModel = model("product", ProductSchema);
@@ -27,7 +27,7 @@ const ProductModel = model("product", ProductSchema);
 class ProductDAO {
 
   constructor(){
-    MongoDB.getConnection()
+    MongoDB.getConnection();
   }
   
   getProducts = async (id?: string) => {
@@ -39,7 +39,7 @@ class ProductDAO {
 
   getProductsByCategory = async (category : string) => {
     const data = await ProductModel.find({ category : category})
-    return data
+    return data  
   }
 
   loadProduct = async (data : IProduct) => {
