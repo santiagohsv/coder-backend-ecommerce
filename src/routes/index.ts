@@ -2,12 +2,14 @@ import express from 'express';
 
 import productRouter from './products';
 import cartRouter from './cart';
+import authRouter from './auth'
 import homeRouter from './home';
 
 const router = express.Router();
 
 router.use('/api/productos', productRouter);
 router.use('/api/carrito', cartRouter);
+router.use('/auth', authRouter)
 router.use('/', homeRouter)
 
 router.use((_req,res) => {

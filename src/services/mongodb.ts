@@ -1,34 +1,41 @@
-import { connect, disconnect } from "mongoose";
 
+import mongoose from "mongoose";
 import env from "../config/index";
+import logger from "./logger";
 
 const connectionString = env.MONGO_ATLAS_SRV as string;
 
-export default class MongoDB {
-  
-  private static instance: MongoDB;
+class MongoDB {
 
-  private constructor() {}
+  static connection: MongoDB;
 
-  public static async getConnection(): Promise<MongoDB> {
-    if (!MongoDB.instance) {
-      try{
-        await connect(connectionString);
-        console.log("Connection to database succeeded");
-        MongoDB.instance = new MongoDB();
-      }  catch (error : any){
+  private constructor() {
+
+  }
+
+  public static async getConnection() {
+
+    if (!MongoDB.connection) {      
+      try {
+        MongoDB.connection = new MongoDB();
+        await mongoose.connect(connectionString)
+        logger.info("Connection to database succeeded");
+      } catch (error: any) {
         console.log("Connection to database failed", error.menssage);
       }
     }
-    return MongoDB.instance;
+    return MongoDB.connection;
   }
 
-  public async dbDisconnection() {
+  static async dbDisconnection() {
     try {
-      await disconnect();
+      await mongoose.disconnect();
       console.log(`Database disconnection succeded`);
-    } catch (error : any) {
+    } catch (error: any) {
       console.log(`Disconnection to database failed. ${error.menssage}`);
     }
   }
 }
+
+export default MongoDB;
+

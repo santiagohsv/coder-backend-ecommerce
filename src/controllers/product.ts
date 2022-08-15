@@ -23,7 +23,7 @@ export default class Products {
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
       if(err.name ==='CastError' && err.kind === 'ObjectId'){
-        res.status(404).json({msg : `El ID: ${err.value} no coincide con ningún producto`})
+        res.status(404).json({msg : `There is no product with ID: ${err.value} `})
       }else{res.json(err.message)}
     }
   };
