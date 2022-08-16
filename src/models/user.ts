@@ -8,6 +8,7 @@ export interface IUser {
   lastName: string;
   mail: string;
   password: string;
+  admin: boolean  
 }
 
 const UserSchema = new Schema<IUser>(
@@ -16,6 +17,7 @@ const UserSchema = new Schema<IUser>(
     lastName: { type: String, require: true, max: 40 },
     mail: { type: String, require: true, unique: true },
     password: { type: String, required: true },
+    admin: { type: Boolean, required: false, default: false}
   },
 
   { timestamps: true, versionKey: false }

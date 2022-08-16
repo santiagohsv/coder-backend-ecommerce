@@ -17,3 +17,7 @@ export const  apiLoadProduct =  (data : IProduct) => {
 export const apiGetProductsByCategory = (data : string ) => {
     return ProductDAO.getProductsByCategory(data)
 }
+
+export const apiUpdateProduct = (id: string, data: any) => {
+    return ProductDAO.updateProduct(id, data)
+}

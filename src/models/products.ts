@@ -37,15 +37,12 @@ class ProductDAO {
     return await ProductModel.find()
   }
 
-  getProductsByCategory = async (category : string) => {
-    const data = await ProductModel.find({ category : category})
-    return data  
-  }
+  getProductsByCategory = async (category : string) => await ProductModel.find({ category : category})
 
-  loadProduct = async (data : IProduct) => {
-    await ProductModel.create(data)
-    return 'Products added'
-  }
+  loadProduct = async (data : IProduct) => await ProductModel.create(data);
+
+  updateProduct = async (id: string, data: any) => await ProductModel.findByIdAndUpdate(id, data);
+
  }
 
 export default new ProductDAO;
