@@ -7,91 +7,276 @@
 	},
 	"item": [
 		{
-			"name": "Listado de productos",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/api/productos",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"productos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Detalle de un producto",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"productos",
-						"62efb8fb7f5d38976514268f"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Listado de productos por categoria",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/api/productos/category/computers",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"productos",
-						"category",
-						"computers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Agregar productos a la base de datos",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "    {\r\n      \"name\": \"Sony FE 70-200mm f/2.8 Lens\",\r\n      \"category\": \"Photography\",\r\n      \"price\": 2000,\r\n      \"thumbnail\": \"https://static.bhphoto.com/images/images500x500/1634123153_1666363.jpg\",\r\n      \"stock\":8\r\n    }\r\n \r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Login/Signup",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"\", \r\n    \"lastName\": \"\",\r\n    \"mail\": \"\",\r\n    \"password\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
 						}
-					}
+					},
+					"response": []
 				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mail\": \"admin@mail.com\",\r\n    \"password\" :\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"62efb8fb7f5d38976514268f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/productos/category/computers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"category",
+								"computers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product to DB",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjYwNjU4OTE1LCJleHAiOjE2NjA2NTkxNTV9.l7e8u-LqhNezlyd8H5NKr964WJOcDeNNAxvPXfphfm4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n      \"name\": \"MX KEY Logitech wireless keyboard\",\r\n      \"category\": \"computers\",\r\n      \"price\": 200,\r\n      \"thumbnail\": \"https://resource.logitech.com/w_386,ar_1.0,c_limit,f_auto,q_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png?v=1\",\r\n      \"stock\":12\r\n    }\r\n \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						},
+						"description": "El producto se pasa por el body. Con el siguiente formato:\r\n\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update product by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 1560\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"62efb8fb7f5d38976514268f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "View Cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJTYW50aWFnbyIsImxhc3ROYW1lIjoiU2FuY2hleiIsIm1haWwiOiJzYW50aWFnby5zQG1haWwuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjA3NjAzODksImV4cCI6MTY2MDc2MDYyOX0.MN-xezLNqd-J16MajSh6SWCzRSQxaH0XYK2eMzlffZo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/carrito",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJTYW50aWFnbyIsImxhc3ROYW1lIjoiU2FuY2hleiIsIm1haWwiOiJzYW50aWFnby5zQG1haWwuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjA3Njk0MzYsImV4cCI6MTY2MDc2OTY3Nn0.si01DMJCqSlD6Nlz1t4SXi2NjzT3WDraiLsWC14zFPk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/carrito/62efb8fb7f5d38976514268f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"62efb8fb7f5d38976514268f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb24iLCJsYXN0TmFtZSI6IkRvZSIsIm1haWwiOiJKb25Eb2VAbWFpbC5jb20iLCJpYXQiOjE2NjA2NTU5OTIsImV4cCI6MTY2MDY1NjIzMn0.djnUiZyYqreyCjfyS0gZ4aam5BbL9dX0gMoZdTgrcTw",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": "localhost:8080/api/productos",
+					"raw": "localhost:8080/",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"api",
-						"productos"
+						""
 					]
-				},
-				"description": "El producto se pasa por el body. Con el siguiente formato:\r\n\r\n\r\n"
+				}
 			},
 			"response": []
 		}
