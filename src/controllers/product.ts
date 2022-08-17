@@ -30,7 +30,7 @@ export default class Products {
       logger.info(`Error, ${err.message}`);
       if (err.name === "CastError" && err.kind === "ObjectId") {
         res
-          .status(404)
+          .status(400)
           .json({ msg: `There is no product with ID: ${err.value} ` });
       } else {
         res.json(err.message);
@@ -46,7 +46,7 @@ export default class Products {
         await apiLoadProduct(data);
         res.json({ msg: "Product added correctly" });
       } else {
-        res.status(401).json({ msg: "Unauthorized" });
+        res.status(403).json({ msg: "Forbidden" });
       }
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
@@ -64,7 +64,7 @@ export default class Products {
         await apiUpdateProduct(id, data);
         res.json({ msg: "Product updated correctly" });
       } else {
-        res.status(401).json({ msg: "Unauthorized" });
+        res.status(403).json({ msg: "Forbidden" });
       }
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);

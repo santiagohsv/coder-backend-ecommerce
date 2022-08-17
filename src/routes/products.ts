@@ -5,15 +5,15 @@ import {checkAuth} from '../middlewares/auth';
 const router = express.Router();
 
 
-router.get("/", productController.getProducts); // Listado de productos disponibles
+router.get("/", productController.getProducts); // View products
 
-router.get("/category/:category", productController.getProductsByCategory); // Listado de productos por categoría
+router.get("/category/:category", productController.getProductsByCategory); // View products by category
 
-router.get("/:id", productController.getProductsById); // Detalle de un producto
+router.get("/:id", productController.getProductsById); // View product detail
 
-router.post("/", checkAuth, productController.loadProduct); // Agregar productos a la base de datos
+router.post("/", checkAuth, productController.loadProduct); // Add product to dababase
 
-router.put("/:id", checkAuth,  productController.updateProduct) // Actualizar productos
+router.put("/:id", checkAuth,  productController.updateProduct) // Update products
 
 
 export default router;

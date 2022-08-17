@@ -3,6 +3,7 @@ import env from "../config";
 import { IUser } from "../models/user";
 
 const privateKey = env.JWT_KEY as string;
+const time = env.JWT_TIME as string
 
 const generateToken = function (user: IUser): string {
   
@@ -14,7 +15,7 @@ const generateToken = function (user: IUser): string {
   };
 
   const token = jwt.sign(data, privateKey, {
-    expiresIn: "4m",
+    expiresIn: time,
   });
 
   return token;
