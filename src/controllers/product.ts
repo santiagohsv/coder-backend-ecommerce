@@ -31,7 +31,7 @@ export default class Products {
       if (err.name === "CastError" && err.kind === "ObjectId") {
         res
           .status(400)
-          .json({ msg: `There is no product with ID: ${err.value} ` });
+          .json({ msg: `ID: ${err.value} not found` });
       } else {
         res.json(err.message);
       }
@@ -68,7 +68,13 @@ export default class Products {
       }
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
-      res.json(err.message);
+      if (err.name === "CastError" && err.kind === "ObjectId") {
+        res
+          .status(400)
+          .json({ msg: `ID: ${err.value} not found` });
+      } else {
+        res.json(err.message);
+      }
     }
   };
 
