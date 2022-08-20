@@ -1,9 +1,9 @@
 import express from 'express';
+
 import productController from '../controllers/product'
 import {checkAuth} from '../middlewares/auth';
 
 const router = express.Router();
-
 
 router.get("/", productController.getProducts); // View products
 

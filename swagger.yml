@@ -8,7 +8,7 @@ info:
     email: santiago.hsv@gmail.com
   version: 1.0.0
 servers:
-  - url: localhost:8080
+  - url: http://localhost:8080/
 tags:
   - name: User
     description: Login and Signup 
