@@ -43,6 +43,7 @@ class CartDAO {
 
   updateCart = async (cartID: string, products: ICartProd[]) => await CartModel.findByIdAndUpdate(cartID, {productList : products});
 
+  emptyCart = async ( cartID: string  ) => await CartModel.findByIdAndUpdate(cartID, {productList : []});
 }
   
   export default new CartDAO;
