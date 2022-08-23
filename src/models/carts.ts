@@ -1,4 +1,4 @@
-import { Schema, model, ObjectId } from "mongoose";
+import { Schema, model, ObjectId } from 'mongoose';
 import MongoDB from '../services/mongodb';
 
 
@@ -29,7 +29,7 @@ const CartSchema = new Schema<ICart>(
 );
 
 
-const CartModel = model("cart", CartSchema)
+const CartModel = model('cart', CartSchema)
 
 class CartDAO {
 

@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import  jwt from "jsonwebtoken";
-import env from "../config/index";
+import { Request, Response, NextFunction } from 'express';
+import  jwt from 'jsonwebtoken';
+import env from '../config/index';
 
 export async function checkAuth(req: Request, res: Response, next: NextFunction) {
   const token = req.headers['auth-token'] as string;

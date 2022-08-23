@@ -1,6 +1,6 @@
-import jwt from "jsonwebtoken";
-import env from "../config";
-import { IUser } from "../models/user";
+import jwt from 'jsonwebtoken';
+import env from '../config';
+import { IUser } from '../models/user';
 
 const privateKey = env.JWT_KEY as string;
 const time = env.JWT_TIME as string

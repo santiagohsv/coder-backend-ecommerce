@@ -1,7 +1,7 @@
 
-import mongoose from "mongoose";
-import env from "../config/index";
-import logger from "./logger";
+import mongoose from 'mongoose';
+import env from '../config/index';
+import logger from './logger';
 
 const connectionString = env.MONGO_ATLAS_SRV as string;
 
@@ -19,9 +19,9 @@ class MongoDB {
       try {
         MongoDB.connection = new MongoDB();
         await mongoose.connect(connectionString)
-        logger.info("Connection to database succeeded");
+        logger.info('Connection to database succeeded');
       } catch (error: any) {
-        console.log("Connection to database failed", error.menssage);
+        console.log('Connection to database failed', error.menssage);
       }
     }
     return MongoDB.connection;

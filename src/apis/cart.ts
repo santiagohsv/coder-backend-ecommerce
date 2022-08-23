@@ -1,4 +1,4 @@
-import CartDAO, { ICartProd } from "../models/carts";
+import CartDAO, { ICartProd } from '../models/carts';
 
 export const apiCreateCart = (mail: string) => {
   return CartDAO.createCart(mail);

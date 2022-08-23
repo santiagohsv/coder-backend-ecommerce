@@ -166,7 +166,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products      
-  /api/product/category/{category}:
+  /api/productos/categorias/{category}:
     get:
       tags:
         - Products
@@ -179,7 +179,7 @@ paths:
           required: true
           schema:
             type: string
-            example: Computers
+            example: computers
       responses:
         '200':
           description: Successful request

@@ -1,0 +1,13 @@
+doctype html
+html 
+  head 
+    title='Ecommerse - Chat'
+    link(rel='stylesheet' href='../../style.css')
+  body
+    div(class='user') 
+      a Welcome👋! 
+    br
+    h2 Chat
+    include components/chat
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js')
+      script(src='../../main.js')

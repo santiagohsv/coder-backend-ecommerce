@@ -3,10 +3,11 @@ import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
 
+import homeRouter from './home';
+import authRouter from './auth'
 import productRouter from './products';
 import cartRouter from './cart';
-import authRouter from './auth'
-import homeRouter from './home';
+import chatRouter from './chat';
 
 const router = express.Router();
 const swaggerPath = path.resolve(process.cwd(), './swagger.yml');
@@ -17,6 +18,7 @@ router.use('/', homeRouter);
 router.use('/auth', authRouter);
 router.use('/api/productos',  productRouter);
 router.use('/api/carrito', cartRouter);
+router.use('/api/chat', chatRouter);
 
 // API documentation
 router.use('/api-docs', swaggerUi.serve);

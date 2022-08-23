@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import logger from "../services/logger";
+import { Request, Response } from 'express';
+import logger from '../services/logger';
 import { apiGetCart , apiUpdateCart} from '../apis/cart';
 import { apiGetProductsById } from '../apis/product';
 import { ICartProd, ICart } from '../models/carts';
@@ -53,7 +53,7 @@ export default class Cart {
   
     } catch (err: any) {
         logger.info(`Error, ${err.message}`);
-        if (err.name === "CastError" && err.kind === "ObjectId") {
+        if (err.name === 'CastError' && err.kind === 'ObjectId') {
           res
             .status(400)
             .json({ msg: `There is no product with ID: ${err.value} ` });

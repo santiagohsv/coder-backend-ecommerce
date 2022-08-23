@@ -1,11 +1,11 @@
-import { Request, Response } from "express";
-import bcrypt from "bcrypt";
+import { Request, Response } from 'express';
+import bcrypt from 'bcrypt';
 import CartDAO from '../models/carts'
-import UserDAO from "../models/user";
-import generateToken from "../services/auth";
-import logger from "../services/logger";
-import { notifNewUser } from "../services/mailing";
-import { apiCreateCart } from "../apis/cart";
+import UserDAO from '../models/user';
+import generateToken from '../services/auth';
+import logger from '../services/logger';
+import { notifNewUser } from '../services/mailing';
+import { apiCreateCart } from '../apis/cart';
 
 export default class Auth {
 
@@ -20,13 +20,13 @@ export default class Auth {
       // Verify if mail exist 
       const user = await UserDAO.verifyUser(mail);
       if (!user) {
-        throw new Error("User not found");
+        throw new Error('User not found');
       }
       
       // Validate credentials
       const validatePassword = bcrypt.compareSync(password, user.password);
       if (!validatePassword) {
-        throw new Error("Invalid credentials");
+        throw new Error('Invalid credentials');
       }
 
       // Generate token
@@ -42,7 +42,7 @@ export default class Auth {
       // Send Headers to client & Log
 
       logger.info(`New login - User:${user.mail}`);  
-      res.header("auth-token", token).json({ msg: "Welcome" });
+      res.header('auth-token', token).json({ msg: 'Welcome' });
 
     } catch (err: any) {
       const errStatus = err.status || 401
@@ -65,7 +65,7 @@ export default class Auth {
       const token = generateToken(newUser);
 
       // Send Headers
-      res.header("auth-token", token).json({
+      res.header('auth-token', token).json({
         error: null,
         data: { token },
       });

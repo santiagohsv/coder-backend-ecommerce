@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 import bcrypt from 'bcrypt';
 
 import MongoDB from '../services/mongodb';
@@ -23,7 +23,7 @@ const UserSchema = new Schema<IUser>(
   { timestamps: true, versionKey: false }
 );
 
-UserSchema.pre("save", async function (next) {
+UserSchema.pre('save', async function (next) {
   const user = this;
   const hash = await bcrypt.hash(user.password, 10);
   this.password = hash;
@@ -31,7 +31,7 @@ UserSchema.pre("save", async function (next) {
 });
 
 
-export const UserModel = model("user", UserSchema);
+export const UserModel = model('user', UserSchema);
 
 class UserDAO {
   constructor() {

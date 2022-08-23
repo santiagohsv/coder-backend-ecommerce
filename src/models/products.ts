@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 import MongoDB from '../services/mongodb';
 
@@ -22,7 +22,7 @@ const ProductSchema = new Schema<IProduct>(
 );
 
 
-const ProductModel = model("product", ProductSchema);
+const ProductModel = model('product', ProductSchema);
 
 class ProductDAO {
 

@@ -1,10 +1,10 @@
-import { createLogger, transports, format } from "winston";
+import { createLogger, transports, format } from 'winston';
 
 const logConfiguration = {
   transports: [
-    new transports.Console({ level: "info" }),
-    new transports.File({ filename: "./logs/warn.log", level: "warn" }),
-    new transports.File({ filename: "./logs/error.log", level: "error" }),
+    new transports.Console({ level: 'info' }),
+    new transports.File({ filename: './logs/warn.log', level: 'warn' }),
+    new transports.File({ filename: './logs/error.log', level: 'error' }),
   ],
   format: format.combine(
     format.colorize(),
