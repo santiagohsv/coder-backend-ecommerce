@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
  
 import { apiGetCart, apiUpdateCart, apiCheckOut, apiEmptyCart } from '../apis/cart';
 import { apiGetProductsById } from '../apis/product';
+import { notifNewOrder } from '../services/mailing'
 import { ICartProd, ICart } from '../models/carts';
 import { IProduct } from '../models/products';
 import logger from '../services/logger';
@@ -85,11 +86,13 @@ export default class Cart {
 
       await apiCheckOut(user.mail, number, cart.productList, orderTotal);
 
-      res.send({ msg : `Order number ${number} has been created`})
-
+      notifNewOrder(user.mail, user.firstName, cart.productList)
+      
       // Empty Cart
       const cartId = cart._id.toString();
       await apiEmptyCart(cartId)
+
+      res.send({ msg : `Order number ${number} has been created`})
 
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
