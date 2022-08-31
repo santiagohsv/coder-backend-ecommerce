@@ -5,6 +5,7 @@ import MongoDB from '../services/mongodb';
 // Cart product interface
 
 export interface ICartProd {
+  _id?: ObjectId;
   name : string,
   price: number, 
   qty: number
@@ -44,6 +45,7 @@ class CartDAO {
   updateCart = async (cartID: string, products: ICartProd[]) => await CartModel.findByIdAndUpdate(cartID, {productList : products});
 
   emptyCart = async ( cartID: string  ) => await CartModel.findByIdAndUpdate(cartID, {productList : []});
+  
 }
   
   export default new CartDAO;

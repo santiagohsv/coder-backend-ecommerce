@@ -21,7 +21,7 @@ class MongoDB {
         await mongoose.connect(connectionString)
         logger.info('Connection to database succeeded');
       } catch (error: any) {
-        console.log('Connection to database failed', error.menssage);
+        logger.error('Connection to database failed');
       }
     }
     return MongoDB.connection;
@@ -32,7 +32,7 @@ class MongoDB {
       await mongoose.disconnect();
       console.log(`Database disconnection succeded`);
     } catch (error: any) {
-      console.log(`Disconnection to database failed. ${error.menssage}`);
+      logger.error(`Disconnection to database failed. ${error.menssage}`);
     }
   }
 }

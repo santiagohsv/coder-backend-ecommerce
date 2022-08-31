@@ -40,15 +40,8 @@ class UserDAO {
     MongoDB.getConnection();
   }
 
-  getUsers = async (id?: string) => {
-    if (id) {
-      return await UserModel.findById(id);
-    }
-    return await UserModel.find();
-  };
-
-  verifyUser = async (data: string) => {
-    return await UserModel.findOne({ mail: data });
+  getUser = async (mail: string) => {
+    return await UserModel.findOne({ mail: mail });
   } 
   
   createUser = async (data: IUser) => {

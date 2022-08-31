@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
-import bcrypt from 'bcrypt';
-import CartDAO from '../models/carts'
-import UserDAO from '../models/user';
+
 import generateToken from '../services/auth';
 import logger from '../services/logger';
 import { notifNewUser } from '../services/mailing';
-import { apiCreateCart } from '../apis/cart';
+import { apiGetCart, apiCreateCart } from '../apis/cart';
+import { apiGetUser, apiCreateUser } from '../apis/user'
+import { IUser } from "../models/user";
 
 export default class Auth {
 
@@ -15,38 +15,24 @@ export default class Auth {
 
     try {
 
-      const { mail, password } = req.body;
-
-      // Verify if mail exist 
-      const user = await UserDAO.verifyUser(mail);
-      if (!user) {
-        throw new Error('User not found');
-      }
-      
-      // Validate credentials
-      const validatePassword = bcrypt.compareSync(password, user.password);
-      if (!validatePassword) {
-        throw new Error('Invalid credentials');
-      }
+      const { mail } = req.body;
+      const user = await apiGetUser(mail) as IUser;
 
       // Generate token
       const token = generateToken(user);
 
       // Create new Cart (in case there is not allready created ) 
-      const userMail = user.mail
-      const cart = await CartDAO.getCart(userMail)
+      const cart = await apiGetCart(mail)
       if(!cart){
-        await apiCreateCart(user.mail);
+        await apiCreateCart(mail);
       }
 
       // Send Headers to client & Log
-
       logger.info(`New login - User:${user.mail}`);  
       res.header('auth-token', token).json({ msg: 'Welcome' });
 
     } catch (err: any) {
-      const errStatus = err.status || 401
-      res.status(errStatus).json({msg: err.message});
+      res.json({msg: err.message});
       logger.info(`Error, ${err.message}`);
     }
   };
@@ -56,7 +42,7 @@ export default class Auth {
       const data = req.body;
 
       // Create new user
-      const newUser = await UserDAO.createUser(data);
+      const newUser = await apiCreateUser(data);
 
       // Send new user mail notification
       notifNewUser(data.mail, data.firstName);

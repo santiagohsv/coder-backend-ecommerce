@@ -67,6 +67,40 @@ export default class Cart {
     }
   };
 
+  static deleteProduct = async (req: Request, res: Response) => {
+    try {
+      const { productID } = req.params;
+      const user = res.locals.user;
+
+      // Update product list by deleting de product with the particular ID
+
+      const cart = (await apiGetCart(user.mail)) as ICart;
+      const prodList: ICartProd[] = cart.productList as ICartProd[];
+      const index = prodList.findIndex(
+        (prod) => prod._id?.toString() === productID
+      );
+      prodList.splice(index, 1); // elimino producto
+
+      // Update cart with new product list
+
+      const cartId = cart._id.toString();
+
+      await apiUpdateCart(cartId, prodList);
+
+      res.json({ msg: "Product deleted" });
+    } catch (err: any) {
+      logger.info(`Error, ${err.message}`);
+      if (err.name === "CastError" && err.kind === "ObjectId") {
+        res
+          .status(400)
+          .json({ msg: `There is no product with ID: ${err.value} ` });
+      } else {
+        res.json(err.message);
+        logger.info(`Error, ${err.message}`);
+      }
+    }
+  };
+
   static checkOut = async (_req: Request, res: Response) => {
 
     try {
