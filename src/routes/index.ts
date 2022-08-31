@@ -3,7 +3,7 @@ import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import path from 'path';
 
-import homeRouter from './home';
+import infoRouter from './info';
 import authRouter from './auth'
 import productRouter from './products';
 import cartRouter from './cart';
@@ -14,13 +14,13 @@ const swaggerPath = path.resolve(process.cwd(), './swagger.yml');
 const swaggerDoc = YAML.load(swaggerPath);
 
 // API resourses
-router.use('/', homeRouter);
 router.use('/auth', authRouter);
 router.use('/api/productos',  productRouter);
 router.use('/api/carrito', cartRouter);
 router.use('/api/chat', chatRouter);
+router.use('/api/info', infoRouter);
 
-// API documentation
+// API info and documentation
 router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDoc));
 
