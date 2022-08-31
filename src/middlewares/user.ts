@@ -16,13 +16,12 @@ export default async function verifyUser(
   if (!user) {
     return res.status(401).json({ msg: "User not found" });
   }
-  console.log(password, user.password)
+
   const validatePassword = await apiValidateCredentials(
     password,
     user.password
   );
 
-  console.log(validatePassword)
   if (!validatePassword) {
     return res.status(401).json({ msg: "Invalid credentials" });
   }

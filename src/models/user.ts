@@ -8,8 +8,8 @@ export interface IUser {
   lastName: string;
   mail: string;
   password: string;
-  phone: number
   admin: boolean  
+  address: string;
 }
 
 const UserSchema = new Schema<IUser>(
@@ -18,8 +18,8 @@ const UserSchema = new Schema<IUser>(
     lastName: { type: String, require: true, max: 40 },
     mail: { type: String, require: true, unique: true },
     password: { type: String, required: true },
-    phone: { type: Number, required: true },
-    admin: { type: Boolean, required: true, default: false}
+    admin: { type: Boolean, required: true, default: false},
+    address: { type: String, required: true },
   },
 
   { timestamps: true, versionKey: false }
