@@ -19,101 +19,12 @@ html {
   margin-left: 4px;
   margin-right: 4px;
 }
-
-#authForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  margin: auto;
-}
-
-#authForm .input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 4px;
-  font-size: 14px;
-}
-
-#authForm .input input {
-  width: 100%;
-  height: 32px;
-}
-
-#authForm .btn {
-  width: 100%;
-  margin-top: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-}
-
-#authForm .btn button {
-  width: 88px;
-  height: 32px;
-  background-color: #18104750;
-  border: 1px #10474050;
-  border-radius: 4px;
-}
-
-#authForm .btn button:hover {
-  background-color: #1e1047c5;
-  color: wheat;
-}
-
-#authForm .error-msg {
-  width: 100%;
-  margin-top: 8px;
-  height: 32px;
-  background-color: rgba(255, 0, 0, 0.497);
-  border-radius: 4px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.toSignupBtn {
-  width: 88px;
-  height: 32px;
-  background-color: #18104750;
-  border: 1px #10474050;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.toSignupBtn a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.toSignupBtn:hover {
-  background-color: #1e1047c5;
-  color: wheat;
-}
-
-.error {
-  width: 600px;
-  height: 200px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(226, 30, 30, 0.753);
-}
-
-.error button {
-  margin-top: 16px;
-  height: 40px;
-  width: 60px;
-}
 .user {
   width: 25vw;
   height: 100px;
   background-color: aquamarine;
+}
+
+#messages {
+  width: 25vw;
 }

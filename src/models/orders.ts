@@ -12,7 +12,7 @@ export interface ICartProd {
 // Order interface
 
 export interface IOrder {
-  customer: string;
+  customer?: string;
   status: string;
   orderNumber: number;
   productList: ICartProd[];
@@ -45,6 +45,11 @@ class OrdersDAO {
   createOrder = async (mail: string,orderNumber: number,productList: ICartProd[], orderTotal: number) => {
     await OrdersModel.create({orderNumber: orderNumber, customer: mail, productList: productList, orderTotal: orderTotal});
   }
+
+  getOrder = async (mail: string)  => {
+    return await OrdersModel.find({ mail: mail});
+  }
+
 }
 
 export default new OrdersDAO();

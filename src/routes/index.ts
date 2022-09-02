@@ -14,7 +14,7 @@ const swaggerPath = path.resolve(process.cwd(), './swagger.yml');
 const swaggerDoc = YAML.load(swaggerPath);
 
 // API resourses
-router.use('/auth', authRouter);
+router.use('/api/auth', authRouter);
 router.use('/api/productos',  productRouter);
 router.use('/api/carrito', cartRouter);
 router.use('/api/chat', chatRouter);

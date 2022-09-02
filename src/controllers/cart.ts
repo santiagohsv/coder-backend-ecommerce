@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
  
-import { apiGetCart, apiUpdateCart, apiCheckOut, apiEmptyCart } from '../apis/cart';
+import { apiGetCart, apiUpdateCart, apiEmptyCart } from '../apis/cart';
+import { apiCheckOut } from '../apis/order';
 import { apiGetProductsById } from '../apis/product';
 import { notifNewOrder } from '../services/mailing'
 import { ICartProd, ICart } from '../models/carts';
