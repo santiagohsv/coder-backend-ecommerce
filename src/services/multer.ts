@@ -1,13 +1,19 @@
 import multer from 'multer';
-import { uuid } from 'uuidv4';
-import path from 'path'
+import { GridFsStorage } from 'multer-gridfs-storage';
+import env from '../config';
 
+const mongoURL= env.MONGO_ATLAS_SRV as string;
 
-
-const storage = multer.diskStorage({
-    //destination: 'uploads',
-    filename: (_req, file, cb) => {
-        cb(null, uuid() + path.extname(file.originalname))
+const storage = new GridFsStorage({
+    url: mongoURL,
+    file: (_req, file) => {
+        if (file.mimetype === 'image/jpeg') {
+          return {
+            bucketName: 'images'
+          };
+        } else {
+          return null;
+        }
     }
 });
 
