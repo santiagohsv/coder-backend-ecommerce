@@ -92,7 +92,7 @@ paths:
       description: ''
       requestBody:
         content:
-          application/json:
+          multipart/form-data:
             schema:
               $ref: '#/components/schemas/ProductInput'
         required: true
@@ -188,7 +188,22 @@ paths:
              schema:
               type: array
               items:
-                $ref: '#/components/schemas/Product'               
+                $ref: '#/components/schemas/Product'     
+  /api/info:
+    get:
+      tags:
+        - Info
+      summary: Get server info 
+      description: ''
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+             schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Info'               
 components:
   schemas:
     LoginInput:
@@ -214,7 +229,13 @@ components:
           example: jimmy-page@gmail.com
         password:
           type: string
-          example: 1234         
+          example: 1234  
+        admin:
+          type: boolean
+          example: false
+        address:
+          type: string
+          example: 27826 Hollow Ridge Pass
     Product:
       type: object
       properties:
@@ -232,7 +253,7 @@ components:
           example: 1000       
         thumbnail:
           type: string
-          example: imageURL
+          example: 7db6e4b5741ff0d8f304ed75233d25c7
         stock:
           type: number
           example: 10
@@ -260,6 +281,24 @@ components:
         stock:
           type: number
           example: 10
+    Info:
+      type: object
+        properties:
+          os:
+            type: string
+            example: win32
+          node:
+            type: string
+            example: v16.15.1
+          memory:
+            type: number
+            example: 102977536       
+          path:
+            type: string
+            example: C:\Users\User\proyectname
+          pid:
+            type: number
+            example: 22316     
   securitySchemes:
     jwt-auth:
       type: apiKey

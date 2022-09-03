@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { apiGetUser, apiValidateCredentials } from "../apis/user";
-import { IUser } from "../models/user";
+import { Request, Response, NextFunction } from 'express';
+import { apiGetUser, apiValidateCredentials } from '../apis/user';
+import { IUser } from '../models/user';
 
 export default async function verifyUser(
   req: Request,
@@ -14,7 +14,7 @@ export default async function verifyUser(
   const user = (await apiGetUser(mail)) as IUser;
 
   if (!user) {
-    return res.status(401).json({ msg: "User not found" });
+    return res.status(401).json({ msg: 'User not found' });
   }
 
   const validatePassword = await apiValidateCredentials(
@@ -23,7 +23,7 @@ export default async function verifyUser(
   );
 
   if (!validatePassword) {
-    return res.status(401).json({ msg: "Invalid credentials" });
+    return res.status(401).json({ msg: 'Invalid credentials' });
   }
 
   return next();

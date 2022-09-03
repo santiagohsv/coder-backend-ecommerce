@@ -1,5 +1,5 @@
-import { Schema, model } from "mongoose";
-import MongoDB from "../services/mongodb";
+import { Schema, model } from 'mongoose';
+import MongoDB from '../services/mongodb';
 
 // Product interface
 
@@ -25,7 +25,7 @@ const OrderSchema = new Schema<IOrder>(
   {
     orderNumber: { type: Number, required: true, unique: true },
     customer: { type: String, required: true},
-    status: { type: String, required: true, default: "Generated" },
+    status: { type: String, required: true, default: 'Generated' },
     productList: { 
       type: [{ name: String, price: Number, qty: Number }],
       require: true,
@@ -35,7 +35,7 @@ const OrderSchema = new Schema<IOrder>(
   { timestamps: true, versionKey: false }
 );
 
-const OrdersModel = model("order", OrderSchema);
+const OrdersModel = model('order', OrderSchema);
 
 class OrdersDAO {
   constructor() {
@@ -47,7 +47,7 @@ class OrdersDAO {
   }
 
   getOrder = async (mail: string)  => {
-    return await OrdersModel.find({ mail: mail});
+    return await OrdersModel.find({ customer: mail});
   }
 
 }

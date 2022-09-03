@@ -1,12 +1,12 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 import {
   apiGetProducts,
   apiGetProductsByCategory,
   apiGetProductsById,
   apiLoadProduct,
   apiUpdateProduct,
-} from "../apis/product";
-import logger from "../services/logger";
+} from '../apis/product';
+import logger from '../services/logger';
 
 export default class Products {
   constructor() {}
@@ -28,7 +28,7 @@ export default class Products {
       res.json(products);
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
-      if (err.name === "CastError" && err.kind === "ObjectId") {
+      if (err.name === 'CastError' && err.kind === 'ObjectId') {
         res.status(400).json({ msg: `ID: ${err.value} not found` });
       } else {
         res.json(err.message);
@@ -47,9 +47,9 @@ export default class Products {
       if (user.admin) {
         data.thumbnail = image?.filename;
         await apiLoadProduct(data);
-        res.json({ msg: "Product added correctly" });
+        res.json({ msg: 'Product added correctly' });
       } else {
-        res.status(403).json({ msg: "Forbidden" });
+        res.status(403).json({ msg: 'Forbidden' });
       }
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
@@ -65,13 +65,13 @@ export default class Products {
 
       if (user.admin) {
         await apiUpdateProduct(id, data);
-        res.json({ msg: "Product updated correctly" });
+        res.json({ msg: 'Product updated correctly' });
       } else {
-        res.status(403).json({ msg: "Forbidden" });
+        res.status(403).json({ msg: 'Forbidden' });
       }
     } catch (err: any) {
       logger.info(`Error, ${err.message}`);
-      if (err.name === "CastError" && err.kind === "ObjectId") {
+      if (err.name === 'CastError' && err.kind === 'ObjectId') {
         res.status(400).json({ msg: `ID: ${err.value} not found` });
       } else {
         res.json(err.message);

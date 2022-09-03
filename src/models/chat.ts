@@ -15,7 +15,8 @@ const ChatSchema = new Schema<IChat>(
     message :{type: String, required : true},
     date: { type: String, required: true}
   },
-  { timestamps: false , versionKey:false }
+  { timestamps: false , versionKey:false}
+  
 );
 
 const ChatModel = model ('chat', ChatSchema);

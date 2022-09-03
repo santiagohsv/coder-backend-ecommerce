@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "fe9b9a95-b2ac-4d2c-9dfb-683ca02bc93a",
-		"name": "Proyecto:  Backend ecommerce",
+		"name": "Proyecto Santiago Sanchez:  Backend ecommerce",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20246319"
 	},
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"\", \r\n    \"lastName\": \"\",\r\n    \"mail\": \"\",\r\n    \"password\":\"\"\r\n}",
+							"raw": "{\r\n    \"firstName\": \"Norton\", \r\n    \"lastName\": \"Dracey\",\r\n    \"mail\": \"rdracey4@over-blog.com\",\r\n    \"password\":\"1234\",\r\n    \"admin\": false,\r\n    \"address\": \"5348 Bobwhite Avenue\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,18 +24,87 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/auth/signup",
+							"raw": "localhost:8080/api/auth/signup",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"auth",
 								"signup"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Norton\", \r\n    \"lastName\": \"Dracey\",\r\n    \"mail\": \"rdracey4@over-blog.com\",\r\n    \"password\":\"1234\",\r\n    \"admin\": false,\r\n    \"address\": \"5348 Bobwhite Avenue\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/auth/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJOb3J0b24iLCJsYXN0TmFtZSI6IkRyYWNleSIsIm1haWwiOiJyZHJhY2V5NEBvdmVyLWJsb2cuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjIyMzEyMTYsImV4cCI6MTY2MjIzMTgxNn0.93-61bXkWGV5q60upK0v0vXf52m0lR4cqNyPEocDewI"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-RNRXGpzVcrYS5NVlWHn1KTGzPqE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:53:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": null,\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJOb3J0b24iLCJsYXN0TmFtZSI6IkRyYWNleSIsIm1haWwiOiJyZHJhY2V5NEBvdmVyLWJsb2cuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjIyMzEyMTYsImV4cCI6MTY2MjIzMTgxNn0.93-61bXkWGV5q60upK0v0vXf52m0lR4cqNyPEocDewI\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Login",
@@ -44,7 +113,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"mail\": \"admin@mail.com\",\r\n    \"password\" :\"12345\"\r\n}",
+							"raw": "{\r\n    \"mail\": \"lfrost1@flavors.me\",\r\n    \"password\" :\"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -52,18 +121,210 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/auth/login",
+							"raw": "localhost:8080/api/auth/login",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
+								"api",
 								"auth",
 								"login"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"mail\": \"falbrook1@virginia.edu\",\r\n    \"password\" :\"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "auth-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MTM4MTE0OSwiZXhwIjoxNjYxMzgxNzQ5fQ.itMhLQw8z_YVOjM5ByBawbPEfX1fTUWfLZ2ob755vb4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11-JAKnz82+yuMuyPsRMckOHNDA8N0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Aug 2022 22:45:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Welcome\"\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"mail\": \"falbrook1@virginia.edu\",\r\n  \"password\": \"1233\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-FpIhXgipHvfUifhaMPQLZ9mQNyg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 26 Aug 2022 01:30:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Invalid credentials\"\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"mail\": \"falbrook2@virginia.edu\",\r\n  \"password\": \"1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-VpfbMv/HaFajh7HshCEW0mw8ZFs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 27 Aug 2022 00:08:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"User not found\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -87,7 +348,61 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Product list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/productos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"productos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "947"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b3-uGI5C45N+vGodJrnbjfnMYmqCjI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:54:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62efb8fb7f5d38976514268f\",\n        \"name\": \"Lenovo ThinkBook\",\n        \"category\": \"computers\",\n        \"price\": 1560,\n        \"thumbnail\": \"image url\",\n        \"stock\": 10,\n        \"createdAt\": \"2022-08-07T13:07:07.330Z\",\n        \"updatedAt\": \"2022-08-19T19:25:22.650Z\"\n    },\n    {\n        \"_id\": \"62f11ac341cba8472892600c\",\n        \"name\": \"Kondor Right-Angle USB 3.1 \",\n        \"category\": \"mobile\",\n        \"price\": 14,\n        \"thumbnail\": \"image url\",\n        \"stock\": 40,\n        \"createdAt\": \"2022-08-08T14:16:35.835Z\",\n        \"updatedAt\": \"2022-08-08T14:16:35.835Z\"\n    },\n    {\n        \"_id\": \"62f128d47b6ac010bbed3057\",\n        \"name\": \"32GB microSDHC Memory Card with SD Adapter\",\n        \"category\": \"computers\",\n        \"price\": 10,\n        \"thumbnail\": \"https://static.bhphoto.com/images/images500x500/1510827627_1375051.jpg\",\n        \"stock\": 0,\n        \"createdAt\": \"2022-08-08T15:16:36.650Z\",\n        \"updatedAt\": \"2022-08-08T15:16:36.650Z\"\n    },\n    {\n        \"_id\": \"631398cd5fd60f1f01878222\",\n        \"name\": \"MX KEY Logitech wireless keyboard\",\n        \"price\": 200,\n        \"thumbnail\": \"7db6e4b5741ff0d8f304ed75233d25c7\",\n        \"stock\": 20,\n        \"createdAt\": \"2022-09-03T18:11:25.976Z\",\n        \"updatedAt\": \"2022-09-03T18:11:25.976Z\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Product details",
@@ -107,7 +422,62 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Product details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"productos",
+										"62efb8fb7f5d38976514268f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-Ev8fzVdYoSecmBfN0s7I/7g3coo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:54:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62efb8fb7f5d38976514268f\",\n    \"name\": \"Lenovo ThinkBook\",\n    \"category\": \"computers\",\n    \"price\": 1560,\n    \"thumbnail\": \"image url\",\n    \"stock\": 10,\n    \"createdAt\": \"2022-08-07T13:07:07.330Z\",\n    \"updatedAt\": \"2022-08-19T19:25:22.650Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Products by category",
@@ -115,7 +485,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/productos/category/computers",
+							"raw": "localhost:8080/api/productos/categorias/computers",
 							"host": [
 								"localhost"
 							],
@@ -123,32 +493,112 @@
 							"path": [
 								"api",
 								"productos",
-								"category",
+								"categorias",
 								"computers"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Products by category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/productos/categorias/computers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"productos",
+										"categorias",
+										"computers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "505"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f9-EW2YgNSiwhNd7NDsb6mMbSSrJm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:55:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"62efb8fb7f5d38976514268f\",\n        \"name\": \"Lenovo ThinkBook\",\n        \"category\": \"computers\",\n        \"price\": 1560,\n        \"thumbnail\": \"image url\",\n        \"stock\": 10,\n        \"createdAt\": \"2022-08-07T13:07:07.330Z\",\n        \"updatedAt\": \"2022-08-19T19:25:22.650Z\"\n    },\n    {\n        \"_id\": \"62f128d47b6ac010bbed3057\",\n        \"name\": \"32GB microSDHC Memory Card with SD Adapter\",\n        \"category\": \"computers\",\n        \"price\": 10,\n        \"thumbnail\": \"https://static.bhphoto.com/images/images500x500/1510827627_1375051.jpg\",\n        \"stock\": 0,\n        \"createdAt\": \"2022-08-08T15:16:36.650Z\",\n        \"updatedAt\": \"2022-08-08T15:16:36.650Z\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Add product to DB",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJhZG1pbiIsImxhc3ROYW1lIjoiYWRtaW4iLCJtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJhZG1pbiI6dHJ1ZSwiaWF0IjoxNjYwNjU4OTE1LCJleHAiOjE2NjA2NTkxNTV9.l7e8u-LqhNezlyd8H5NKr964WJOcDeNNAxvPXfphfm4",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMjg1NjksImV4cCI6MTY2MjIyOTE2OX0.9iiXoIoFEa9RymLK31c9XPN1eENVX1rN3uImrfFrb3c",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "    {\r\n      \"name\": \"MX KEY Logitech wireless keyboard\",\r\n      \"category\": \"computers\",\r\n      \"price\": 200,\r\n      \"thumbnail\": \"https://resource.logitech.com/w_386,ar_1.0,c_limit,f_auto,q_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys/gallery/us-mx-keys-gallery-graphite-front.png?v=1\",\r\n      \"stock\":12\r\n    }\r\n \r\n",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "MX KEY Logitech wireless keyboard",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/C:/Users/santi/Downloads/mx-keys.jpg"
+								},
+								{
+									"key": "catagory",
+									"value": "category",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "20",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
 							"raw": "localhost:8080/api/productos",
@@ -163,16 +613,112 @@
 						},
 						"description": "El producto se pasa por el body. Con el siguiente formato:\r\n\r\n\r\n"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Add product to DB",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMjg1NjksImV4cCI6MTY2MjIyOTE2OX0.9iiXoIoFEa9RymLK31c9XPN1eENVX1rN3uImrfFrb3c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "MX KEY Logitech wireless keyboard",
+											"type": "text"
+										},
+										{
+											"key": "thumbnail",
+											"type": "file",
+											"src": "/C:/Users/santi/Downloads/mx-keys.jpg"
+										},
+										{
+											"key": "catagory",
+											"value": "category",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/api/productos",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"productos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-GfZuDOvxEUNZ3EwNzBCvR9ppeCQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:11:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product added correctly\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Update product by ID",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzEzNjMsImV4cCI6MTY2MjIzMTk2M30.HcR9mF68I8CsZk9D5j0iNyG3m-FEJ2U0XhSq2EadjH0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"price\": 1560\r\n}",
+							"raw": "{\r\n    \"price\": 1590\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -192,7 +738,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update product by ID",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzEzNjMsImV4cCI6MTY2MjIzMTk2M30.HcR9mF68I8CsZk9D5j0iNyG3m-FEJ2U0XhSq2EadjH0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\": 1590\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"productos",
+										"62efb8fb7f5d38976514268f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-zDkYzB6rpzl9jHT9I28Ok1S2eLk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:56:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product updated correctly\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -206,7 +822,7 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJTYW50aWFnbyIsImxhc3ROYW1lIjoiU2FuY2hleiIsIm1haWwiOiJzYW50aWFnby5zQG1haWwuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjA3NjAzODksImV4cCI6MTY2MDc2MDYyOX0.MN-xezLNqd-J16MajSh6SWCzRSQxaH0XYK2eMzlffZo",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
 								"type": "text"
 							}
 						],
@@ -222,7 +838,67 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "View Cart",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/carrito",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"carrito"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ff-YGQuJOr12+mTAChUY/i2MKZJ7GA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:57:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"63051b9bc6c4b5ad1c48fad8\",\n    \"customer\": \"falbrook1@virginia.edu\",\n    \"productList\": [\n        {\n            \"name\": \"Kondor Right-Angle USB 3.1 \",\n            \"price\": 14,\n            \"qty\": 1,\n            \"_id\": \"6309f4320b887846ec5706fc\"\n        }\n    ],\n    \"createdAt\": \"2022-08-23T18:25:31.852Z\",\n    \"updatedAt\": \"2022-08-31T00:50:56.852Z\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Add Product",
@@ -231,12 +907,12 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJTYW50aWFnbyIsImxhc3ROYW1lIjoiU2FuY2hleiIsIm1haWwiOiJzYW50aWFnby5zQG1haWwuY29tIiwiYWRtaW4iOmZhbHNlLCJpYXQiOjE2NjA3Njk0MzYsImV4cCI6MTY2MDc2OTY3Nn0.si01DMJCqSlD6Nlz1t4SXi2NjzT3WDraiLsWC14zFPk",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/carrito/62efb8fb7f5d38976514268f",
+							"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
 							"host": [
 								"localhost"
 							],
@@ -244,41 +920,326 @@
 							"path": [
 								"api",
 								"carrito",
-								"62efb8fb7f5d38976514268f"
+								"62f11ac341cba8472892600c"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"carrito",
+										"62f11ac341cba8472892600c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-BENAIjdA24/ytXgZ35J2LU7zUvM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:58:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product added to cart\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MTkwNjkwNSwiZXhwIjoxNjYxOTA3NTA1fQ.-2Mqmh2SOe80HNUVcnB0MV80i6LsPwutx1eosWunNzY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/carrito/6309f4420b887846ec570701",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"6309f4420b887846ec570701"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"carrito",
+										"62f11ac341cba8472892600c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-bxg72fa+m/JIzfLNQ2kjepy7+mM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:58:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product deleted\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/carrito/checkout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"checkout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Checkout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/carrito/checkout",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"carrito",
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d-uemCpNPKkhO/wBFhZoVF2JAZZco\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 18:59:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Order number 10136 has been created\"\n}"
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "New Folder",
-			"item": []
-		},
-		{
-			"name": "Home",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "auth-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb24iLCJsYXN0TmFtZSI6IkRvZSIsIm1haWwiOiJKb25Eb2VAbWFpbC5jb20iLCJpYXQiOjE2NjA2NTU5OTIsImV4cCI6MTY2MDY1NjIzMn0.djnUiZyYqreyCjfyS0gZ4aam5BbL9dX0gMoZdTgrcTw",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "localhost:8080/",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						""
+			"name": "Info",
+			"item": [
+				{
+					"name": "Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/info",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/info",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "372"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"174-khUpyEkVzn/Fb8tBbDqkdlFVkts\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Sep 2022 19:16:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>Ecommerse - Info</title>\n        <link rel=\"stylesheet\" href=\"../../style.css\">\n    </head>\n    <body>\n        <h2>Server Info</h2>\n        <div class=\"server-info\">\n            <ul>\n                <li>OS: win32</li>\n                <li>Node version: v16.15.1</li>\n                <li>Memory: 102977536</li>\n                <li>Path: C:\\Users\\santi\\Documents\\backend-coder\\ejemplos\\proyectofinal</li>\n                <li>Process ID: 22316</li>\n            </ul>\n        </div>\n    </body>\n</html>"
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

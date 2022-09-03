@@ -5,6 +5,11 @@
 
 ### 🏠 [Homepage]
 
+## Requirements
+
+node >= v16.15.1
+npm >= v8.11.0
+
 ## Install dependencies
 
 ```sh
