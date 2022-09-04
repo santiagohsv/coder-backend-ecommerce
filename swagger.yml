@@ -34,7 +34,7 @@ paths:
           description: Successful signup
           headers:
             auth-token:
-              description: Authentication token (JWT))
+              description: Authentication token (JWT)
               schema:
                 type: string
           content:
@@ -56,7 +56,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SignupInput'p
+              $ref: '#/components/schemas/SignupInput'
         required: true
       responses:
         '200':
