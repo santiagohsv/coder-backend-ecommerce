@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', productController.getProducts); // View products
 
-router.get('/categorias/:category', productController.getProductsByCategory); // View products by category
+router.get('/categories/:category', productController.getProductsByCategory); // View products by category
 
 router.get('/:id', productController.getProductsById); // View product detail
 

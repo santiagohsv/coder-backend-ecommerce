@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
-import generateToken from '../services/auth';
-import logger from '../services/logger';
-import { notifNewUser } from '../services/mailing';
 import { apiGetCart, apiCreateCart } from '../apis/cart';
 import { apiGetUser, apiCreateUser } from '../apis/user'
+import { notifNewUser } from '../services/mailing';
+import generateToken from '../services/auth';
+import logger from '../services/logger';
 import { IUser } from "../models/user";
 
 export default class Auth {

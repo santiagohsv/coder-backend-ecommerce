@@ -113,7 +113,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"mail\": \"lfrost1@flavors.me\",\r\n    \"password\" :\"1234\"\r\n}",
+							"raw": "{\r\n    \"mail\": \"falbrook1@virginia.edu\",\r\n    \"password\" :\"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -337,14 +337,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/productos",
+							"raw": "localhost:8080/api/products",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"productos"
+								"products"
 							]
 						}
 					},
@@ -355,14 +355,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/productos",
+									"raw": "localhost:8080/api/products",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"productos"
+										"products"
 									]
 								}
 							},
@@ -410,14 +410,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+							"raw": "localhost:8080/api/products/62efb8fb7f5d38976514268f",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
+								"products",
 								"62efb8fb7f5d38976514268f"
 							]
 						}
@@ -429,14 +429,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+									"raw": "localhost:8080/api/products/62efb8fb7f5d38976514268f",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"productos",
+										"products",
 										"62efb8fb7f5d38976514268f"
 									]
 								}
@@ -485,15 +485,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/api/productos/categorias/computers",
+							"raw": "localhost:8080/api/products/categories/computers",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
-								"categorias",
+								"products",
+								"categories",
 								"computers"
 							]
 						}
@@ -505,14 +505,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/api/productos/categorias/computers",
+									"raw": "localhost:8080/api/products/categorias/computers",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"productos",
+										"products",
 										"categorias",
 										"computers"
 									]
@@ -601,14 +601,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:8080/api/productos",
+							"raw": "localhost:8080/api/products",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"productos"
+								"products"
 							]
 						},
 						"description": "El producto se pasa por el body. Con el siguiente formato:\r\n\r\n\r\n"
@@ -656,14 +656,14 @@
 									]
 								},
 								"url": {
-									"raw": "localhost:8080/api/productos",
+									"raw": "localhost:8080/api/products",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"productos"
+										"products"
 									]
 								}
 							},
@@ -726,14 +726,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+							"raw": "localhost:8080/api/products/62efb8fb7f5d38976514268f",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"productos",
+								"products",
 								"62efb8fb7f5d38976514268f"
 							]
 						}
@@ -760,14 +760,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/api/productos/62efb8fb7f5d38976514268f",
+									"raw": "localhost:8080/api/products/62efb8fb7f5d38976514268f",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"productos",
+										"products",
 										"62efb8fb7f5d38976514268f"
 									]
 								}
@@ -816,6 +816,101 @@
 			"name": "Cart",
 			"item": [
 				{
+					"name": "Add Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MjI5ODkxNiwiZXhwIjoxNjYyMjk5NTE2fQ.Sf8iwUWwtLQChcsgji-6nzfjKnai-spoqobHVpxqSLg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/api/cart/62f11ac341cba8472892600c",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cart",
+								"62f11ac341cba8472892600c"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "auth-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MjI5ODkxNiwiZXhwIjoxNjYyMjk5NTE2fQ.Sf8iwUWwtLQChcsgji-6nzfjKnai-spoqobHVpxqSLg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "localhost:8080/api/cart/62f11ac341cba8472892600c",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"cart",
+										"62f11ac341cba8472892600c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-BENAIjdA24/ytXgZ35J2LU7zUvM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 04 Sep 2022 13:42:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product added to cart\"\n}"
+						}
+					]
+				},
+				{
 					"name": "View Cart",
 					"request": {
 						"method": "GET",
@@ -827,14 +922,14 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/carrito",
+							"raw": "localhost:8080/api/cart",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"carrito"
+								"cart"
 							]
 						}
 					},
@@ -851,14 +946,14 @@
 									}
 								],
 								"url": {
-									"raw": "localhost:8080/api/carrito",
+									"raw": "localhost:8080/api/cart",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"carrito"
+										"cart"
 									]
 								}
 							},
@@ -901,113 +996,26 @@
 					]
 				},
 				{
-					"name": "Add Product",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"carrito",
-								"62f11ac341cba8472892600c"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Add Product",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "auth-token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJMb3JlZW4iLCJsYXN0TmFtZSI6IkZyb3N0IiwibWFpbCI6Imxmcm9zdDFAZmxhdm9ycy5tZSIsImFkbWluIjp0cnVlLCJpYXQiOjE2NjIyMzE0NjUsImV4cCI6MTY2MjIzMjA2NX0.D4VdcKsseXJ8UHCjBuwg71Qr1MQFDzkCMvCJHLT5zDY",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"api",
-										"carrito",
-										"62f11ac341cba8472892600c"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "31"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1f-BENAIjdA24/ytXgZ35J2LU7zUvM\""
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 03 Sep 2022 18:58:11 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"msg\": \"Product added to cart\"\n}"
-						}
-					]
-				},
-				{
 					"name": "Delete Product",
 					"request": {
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MTkwNjkwNSwiZXhwIjoxNjYxOTA3NTA1fQ.-2Mqmh2SOe80HNUVcnB0MV80i6LsPwutx1eosWunNzY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJGcmFubmllIiwibGFzdE5hbWUiOiJBbGJyb29rIiwibWFpbCI6ImZhbGJyb29rMUB2aXJnaW5pYS5lZHUiLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY2MjI5OTIwNCwiZXhwIjoxNjYyMjk5ODA0fQ.A4MSQeoVjch5GnTJjl3EumZYP69uyHjzB73j50L3B1M",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/carrito/6309f4420b887846ec570701",
+							"raw": "localhost:8080/api/cart/62f11ac341cba8472892600c",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"carrito",
-								"6309f4420b887846ec570701"
+								"cart",
+								"62f11ac341cba8472892600c"
 							]
 						}
 					},
@@ -1024,14 +1032,14 @@
 									}
 								],
 								"url": {
-									"raw": "localhost:8080/api/carrito/62f11ac341cba8472892600c",
+									"raw": "localhost:8080/api/cart/62f11ac341cba8472892600c",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"carrito",
+										"cart",
 										"62f11ac341cba8472892600c"
 									]
 								}
@@ -1086,14 +1094,14 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/carrito/checkout",
+							"raw": "localhost:8080/api/cart/checkout",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"api",
-								"carrito",
+								"cart",
 								"checkout"
 							]
 						}
@@ -1111,14 +1119,14 @@
 									}
 								],
 								"url": {
-									"raw": "localhost:8080/api/carrito/checkout",
+									"raw": "localhost:8080/api/cart/checkout",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"api",
-										"carrito",
+										"cart",
 										"checkout"
 									]
 								}

@@ -56,7 +56,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SignupInput'
+              $ref: '#/components/schemas/SignupInput'p
         required: true
       responses:
         '200':
@@ -68,7 +68,7 @@ paths:
                 example: Welcome
         '404':
           description: Email address is already being used
-  /api/productos:
+  api/products:
     get:
       tags:
         - Products
@@ -111,7 +111,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products        
-  /api/productos/{productID}:
+  api/products/{productID}:
     get:
       tags:
         - Products
@@ -166,7 +166,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products      
-  /api/productos/categorias/{category}:
+  api/products/categorias/{category}:
     get:
       tags:
         - Products
@@ -189,7 +189,91 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/Product'     
-  /api/info:
+  api/cart:
+    get:
+      tags:
+        - Cart
+      summary: Get cart 
+      description: ''
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+             schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Product'    
+  api/cart/{productID}:
+    put:
+      tags:
+        - Cart
+      summary: Add product to cart 
+      description: ''
+      parameters:
+        - name: productID
+          in: path
+          description: ID of the product to add
+          required: true
+          schema:
+            type: string
+            example: 62efb8fb7f5d38976514268f
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+             schema:
+              type: string
+              example: 'Product added to cart'
+      security:
+        - jwt-auth:
+            - write:products
+            - read:products  
+    delete:
+      tags:
+        - Cart
+      summary: Delete product of the to cart 
+      description: ''
+      parameters:
+        - name: productID
+          in: path
+          description: ID of the product to delete
+          required: true
+          schema:
+            type: string
+            example: 62efb8fb7f5d38976514268f
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+             schema:
+              type: string 
+              example: 'Product deleted'
+      security:
+        - jwt-auth:
+            - write:products
+            - read:products  
+  api/cart/checkout:
+    post:
+      tags:
+        - Cart
+      summary: Checkout cart
+      description: ''
+      responses:
+        '200':
+          description: Successful request
+          content:
+            application/json:
+             schema:
+              type: string 
+              example: 'Order number 10136 has been created'
+      security:
+        - jwt-auth:
+            - write:products
+            - read:products  
+  api/info:
     get:
       tags:
         - Info
