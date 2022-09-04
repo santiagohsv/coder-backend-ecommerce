@@ -9,6 +9,7 @@ info:
   version: 1.0.0
 servers:
   - url: http://localhost:8080/
+  - url: https://ecomm-backend-curso-coder-2022.herokuapp.com/
 tags:
   - name: User
     description: Login and Signup 
