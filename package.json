@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend de una aplicación de e-commerce",
   "main": "index.js",
+  "engines": {
+    "node": "16.15.1"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/index.js",
