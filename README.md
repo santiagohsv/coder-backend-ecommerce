@@ -9,7 +9,7 @@ https://ecomm-backend-curso-coder-2022.herokuapp.com/
 
 ### Documentation
 
-https://ecomm-backend-curso-coder-2022.herokuapp.com/api-docs/
+https://ecomm-backend-curso-coder-2022.herokuapp.com/api/docs/
 
 ### Requirements
 
