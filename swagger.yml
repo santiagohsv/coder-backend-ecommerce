@@ -18,7 +18,7 @@ tags:
   - name: Cart
     description: Find and edit cart
 paths:
-  api/auth/login:
+  /api/auth/login:
     post:
       tags:
         - User
@@ -47,7 +47,7 @@ paths:
           description: Email address is already being used
         '401':
           description: Invalid Credentials
-  api/auth/signup:
+  /api/auth/signup:
     post:
       tags:
         - User
@@ -69,7 +69,7 @@ paths:
                 example: Welcome
         '404':
           description: Email address is already being used
-  api/products:
+  /api/products:
     get:
       tags:
         - Products
@@ -112,7 +112,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products        
-  api/products/{productID}:
+  /api/products/{productID}:
     get:
       tags:
         - Products
@@ -167,7 +167,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products      
-  api/products/categorias/{category}:
+  /api/products/categorias/{category}:
     get:
       tags:
         - Products
@@ -190,7 +190,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/Product'     
-  api/cart:
+  /api/cart:
     get:
       tags:
         - Cart
@@ -205,7 +205,7 @@ paths:
               type: array
               items:
                 $ref: '#/components/schemas/Product'    
-  api/cart/{productID}:
+  /api/cart/{productID}:
     put:
       tags:
         - Cart
@@ -256,7 +256,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products  
-  api/cart/checkout:
+  /api/cart/checkout:
     post:
       tags:
         - Cart
@@ -274,7 +274,7 @@ paths:
         - jwt-auth:
             - write:products
             - read:products  
-  api/info:
+  /api/info:
     get:
       tags:
         - Info

@@ -30,7 +30,7 @@ class MongoDB {
   static async dbDisconnection() {
     try {
       await mongoose.disconnect();
-      console.log(`Database disconnection succeded`);
+      logger.info(`Database disconnection succeded`);
     } catch (error: any) {
       logger.error(`Disconnection to database failed. ${error.menssage}`);
     }

@@ -14,15 +14,15 @@ const swaggerPath = path.resolve(process.cwd(), './swagger.yml');
 const swaggerDoc = YAML.load(swaggerPath);
 
 // API resourses
-router.use('/api/auth', authRouter);
-router.use('/api/products',  productRouter);
-router.use('/api/cart', cartRouter);
-router.use('/api/chat', chatRouter);
-router.use('/api/info', infoRouter);
+router.use('/auth', authRouter);
+router.use('/products',  productRouter);
+router.use('/cart', cartRouter);
+router.use('/chat', chatRouter);
+router.use('/info', infoRouter);
 
 // API info and documentation
-router.use('/api-docs', swaggerUi.serve);
-router.get('/api-docs', swaggerUi.setup(swaggerDoc));
+router.use('/docs', swaggerUi.serve);
+router.get('/docs', swaggerUi.setup(swaggerDoc));
 
 // Invalid URL handler
 router.use((_req,res) => {

@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import env from '../config';
 import { IUser } from '../models/user';
 
-const privateKey = env.JWT_KEY as string;
-const time = env.JWT_TIME as string
+const privateKey : string = env.JWT_KEY ;
+const time : string = env.JWT_TIME; 
 
 const generateToken = function (user: IUser): string {
   

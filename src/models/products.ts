@@ -37,7 +37,7 @@ class ProductDAO {
     return await ProductModel.find()
   }
 
-  getProductsByCategory = async (category : string) => await ProductModel.find({ category : category})
+  getProductsByCategory = async (category : string) => await ProductModel.find({ category })
 
   loadProduct = async (data : IProduct) => await ProductModel.create(data);
 
