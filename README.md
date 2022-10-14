@@ -1,7 +1,4 @@
-<h1 align="center"> Backend de una aplicación de e-commerce</h1>
-<p>
- Curso programación Backend Coderhouse 2022
-</p>
+<h1 align="center"> E-commerce backend</h1>
 
 ### 🏠 Deploy
 
